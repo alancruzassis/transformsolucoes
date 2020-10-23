@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>Transform Soluções</title>
+	<style>
+		h1 {
+			font-family: Segoe UI light;
+			font-size: 35pt;
+			color: purple;
+			position:relative;
+			left:110px;
+			top:0px;
+			
+		}
+		h2 {
+			font-family: sans-serif light;
+			font-size: 14pt;
+			color: gray;
+			position:relative;
+			left:11px;
+		}
+		p {
+			font-family: sans-serif light;
+			font-size: 11pt;
+			color: black;
+			position:relative;
+			left:11px;
+		}
+		fieldset {
+			font-family: sans-serif light;
+			font-size: 11pt;
+			color: black;
+			position:relative;
+			left:11px;
+		}
+		img{
+			position: absolute;
+			top:10px
+		}
+		
+			
+		p#conjuntocaixa{
+		position:absolute;
+		width: 40%;
+		height:56%;
+		top:160px;
+		left:350px;
+		text-align:center;
+		
+		background-color:yellow;
+		color:green;
+		font:bold 11pt Arial;
+		}
+		
+		input#caixai{
+		position:relative;
+		text-align:center;
+		top:10px;
+		width: 95%;
+		height:88%;
+		font: normal 11pt Arial
+		
+		}
+		
+		label#labelin{
+		position:relative;
+		top:4px;
+		
+		
+		}
+		p#copyright{
+		font: normal 8pt Arial;
+		text-align:center;
+		}
+		
+	</style>
+	
+	
+	
+</head>
+<body>
+	<hgroup>
+	<h1>TRANSFORM SOLUÇÕES</h1> 
+	<h2>Calculadora/Algoritmo para modificação da concentração de medicamentos</h2>
+	</hgroup>
+	<img src="images/logocalculo.png.png"
+	alt="Logotipo"
+	width="7%"
+	text-align:right
+	padding:30pt
+	>
+	
+		<form method="get" id="fCalculo" action="none" oninput="resultado()">
+			<fieldset style="width: 20%;"><legend>Solução Prescrita</legend>
+			<p><label for="cVolp">Volume(mL): </label><input type="number" name="tVolp" id="cVolp" min="0" max="500000" placeholder="Ex: 500" oninput="clicar()"></p>
+			<p><label for="cConcp">Concentração(%): </label><input type="number" name="tConcp" id="cConcp" min="0" max="500000"placeholder="Ex: 0.9" ></p>
+			
+			
+			</fieldset>
+			<fieldset style="width: 20%;"><legend>Solução Disponível</legend>
+			<p><label for="cVold">Volume(mL): </label><input type="number" name="tVold" id="cVold" min="0" max="500000" readonly ></p>
+			<p><label for="cConcd">Concentração(%): </label><input type="number" name="tConcd" id="cConcd" min="0" max="500000"placeholder="Ex: 0.9"></p>
+			</fieldset>
+			
+			<fieldset style="width: 20%;"><legend>Ampola</legend>
+			<p><label for="cVola">Volume(mL): </label><input type="number" name="tVola" id="cVola" min="0" max="500000" placeholder="Ex: 20"></p>
+			<p><label for="cConca">Concentração(%): </label><input type="number" name="tConca" id="cConca" min="0" max="500000"placeholder="Ex: 10" oninput="resultado()"></p>
+			</fieldset>
+			<br>
+			
+			<p id="conjuntocaixa" class="absolute"><label for="caixai" id="labelin">INSTRUÇÕES</label><input type="text" name="caixan" id="caixai" value="Preencha os campos ao lado"  readonly /></p>
+			
+			
+			
+		</form>
+	
+	
+	<script>
+		function clicar() {
+		var a = window.document.getElementById('cVold')
+		a.value=window.document.getElementById('cVolp').value
+		}
+	
+	</script>
+	
+	<script>
+		function resultado() {
+		var vol1 = parseFloat(window.document.getElementById('cVolp').value)//volume prescrito
+		var con1 = parseFloat(window.document.getElementById('cConcp').value)//concentração prescrita
+		var vol2 = parseFloat(window.document.getElementById('cVold').value)//volume disponível
+		var con2 = parseFloat(window.document.getElementById('cConcd').value)//concentração disponível
+		var vol3 = parseFloat(window.document.getElementById('cVola').value)//volume da ampola
+		var con3 = parseFloat(window.document.getElementById('cConca').value)//concentração da ampola
+		
+		var gramap = parseFloat(((con1/100)*vol1).toFixed(3))//massa de soluto prescrito
+		var gramad = parseFloat(((con2/100)*vol2).toFixed(3))//massa de soluto disponível
+		var gramaa = parseFloat(((con3/100)*vol3).toFixed(3))//massa de soluto da ampola
+		var gramafalta = parseFloat((gramap-gramad).toFixed(3))//massa de soluto q falta pra prescrita
+		
+		var vaserad = parseFloat(((gramafalta*(vol3/gramaa))).toFixed(3))//volume a ser adicionado(ml)
+		var ampsd = parseInt(((vaserad/vol3)).toFixed(3))//qtd ampolas sem desprezamento
+			var aspiracaosd = parseFloat(((vaserad%vol3)).toFixed(3))//volume restante
+		var vold = vaserad //volume a ser desprezado
+			var sold = parseFloat((vaserad*(con2/100)).toFixed(3))//soluto desprezado
+			var novosolfalta = parseFloat((sold+gramafalta).toFixed(3))
+		var volcd = parseFloat((novosolfalta*vol3/gramaa).toFixed(3))//volume com desprezado
+			var ampcd = parseInt((volcd/vol3).toFixed(3))//qtd ampola com desprezado
+				var aspiracaocd = parseFloat((volcd%vol3).toFixed(3))//volume restante
+		
+		var esimaampcd = ampcd+1
+		var esimaampsd= ampsd+1
+		//DILUIÇÃO
+		var desprezar = parseFloat((vol2*(gramad-gramap)/gramad).toFixed(3))//volume restante
+			var adicionar = desprezar //volume a adicionar de água destilada
+		
+			
+		//DISPLAY
+		var r = window.document.getElementById('caixai')//atribuição de local
+		
+	if(con2 > con1){
+		r.value=`Despreze ${desprezar}mL da solução e adcione ${adicionar}mL de água destilada.`
+	}else if(vaserad>50){	
+		r.value= `Despreze ${vold}mL, adcione ${ampcd} ampola(s) inteiras e aspire ${aspiracaocd}mL da ${esimaampcd}ª ampola.` //mostra na instrução
+		}
+	else{
+		r.value= `Adcione ${ampsd} ampola(s) inteira(s) e aspire ${aspiracaosd}mL da ${esimaampsd}ª ampola.`
+		}
+		
+		}
+	
+	</script>
+		
+<p>Obs.: Considere '.' (ponto) como ',' (vírgula) e vice-versa.</p>
+<p>Saiba mais no <a href="https://alamgenio.wixsite.com/transformsolucoes">nosso site</a>.</p>
+
+<p id="copyright">©2020 por UNEB - Todos os direitos reservados.</p>
+
+	
+		  
+	
+	
+			
+	
+</body>
+</html>
+
+	

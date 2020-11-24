@@ -17,19 +17,20 @@
 	<style>
 		h1 {
 			font-family: Arial;
-			font-size: 35pt;
+			font-size: 55pt;
 			color: purple;
-			position:relative;
+			position:absolute;
 			left:110px;
-			top:0px;
+			top:-20px;
 			
 		}
 		h2 {
 			font-family: montserrat;
-			font-size: 13pt;
+			font-size: 15pt;
 			color: #2f5972;
-			position:relative;
-			left:11px;
+			position:absolute;
+			left:112px;
+			top: 90px;
 			
 			}
 		p {
@@ -45,6 +46,8 @@
 			color: black;
 			position:relative;
 			left:11px;
+			width: 1000px;
+			top: 145px;
 		}
 		img{
 			position: absolute;
@@ -104,7 +107,7 @@
 		}
 		
 		form#fCalculo{
-		width: 95%;
+		width: 100%;
 		height:60%;
 		
 		}
@@ -180,7 +183,7 @@ window.alert("Ao fechar este aviso você atesta para os devidos fins que leu e c
 	padding:30pt
 	>
 	
-		<form method="get" id="fCalculo" action="none" oninput="resultado()">
+		<form method="get" id="fCalculo" action="none" oninput="resultado()" >
 			<fieldset style="width: 20%;"><legend><strong>SOLUÇÃO PRESCRITA</strong></legend>
 			<p id="pri"><label for="cVolp">Volume(mL): </label><input type="number" name="tVolp" id="cVolp" min="0" max="500000" placeholder="Ex: 500" oninput="clicar()"></p>
 			<p id="pri2"><label for="cConcp">Concentração(%): </label><input type="number" name="tConcp" id="cConcp" min="0" max="500000"placeholder="Ex: 0.9" ></p>
@@ -198,14 +201,16 @@ window.alert("Ao fechar este aviso você atesta para os devidos fins que leu e c
 			</fieldset>
 			<br>
 			
-			<p id="conjuntocaixa" class="absolute"><label for="caixai" id="labelin">INSTRUÇÕES</label><input type="text" name="caixan" id="caixai" value="Preencha os campos ao lado" readonly /></p>
 			
-			<textarea id="textarea"  readonly >Preencha os campos ao lado</textarea>
+			
+			
 			
 			
 			
 		</form>
 	
+	<p id="conjuntocaixa" class="absolute"><label for="caixai" id="labelin">INSTRUÇÕES</label><input type="text" name="caixan" id="caixai" value="Preencha os campos ao lado" readonly /></p>
+	<textarea id="textarea"  readonly >Preencha os campos ao lado</textarea>
 	
 	<script>
 		function clicar() {
@@ -265,7 +270,14 @@ window.alert("Ao fechar este aviso você atesta para os devidos fins que leu e c
 		}
 	
 	</script>
-		
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>		
 <p><i>Obs.: Considere '.' (ponto) como ',' (vírgula) e vice-versa.</i></p>
 <p>Saiba mais no <span style="text-decoration: underline;"><a href="https://alamgenio.wixsite.com/transformsolucoes">nosso site</a></span>.</p>
 

@@ -18,19 +18,19 @@
 		h1 {
 			font-family: Arial;
 			font-size: 45pt;
-			color: purple;
+			color: #27314d;
 			position:absolute;
 			left:110px;
 			top:-20px;
 			
 		}
 		h2 {
-			font-family: montserrat;
+			font-family: Helvetica;
 			font-size: 15pt;
-			color: #2f5972;
+			color: #0066b3;
 			position:absolute;
 			left:112px;
-			top: 90px;
+			top: 82px;
 			
 			}
 		p {
@@ -46,7 +46,7 @@
 			color: black;
 			position:relative;
 			left:11px;
-			width: 1000px;
+			width: 250px;
 			top: 145px;
 		}
 		img{
@@ -62,9 +62,9 @@
 		p#conjuntocaixa{
 		position:absolute;
 		width: 65%;
-		height:720px;
+		height:792px;
 		top:151px;
-		left:30%;
+		left:320px;
 		text-align:center;
 		
 		background-color:#f9ef23;
@@ -77,10 +77,10 @@
 		text-align:center;
 		line-height:150px;
 		top:192px;
-		left: 32%;
+		left: 340px;
 		width: 60%;
-		height:660px;
-		font: normal 20pt Arial
+		height:710px;
+		font: normal 25pt Arial
 		}
 		
 		input#caixai{
@@ -108,33 +108,33 @@
 		
 		form#fCalculo{
 		width: 100%;
-		height:60%;
+		
 		
 		}
 		
 		p#pri{
 		width: 100%;
-		height:20%;
+		font-size:18pt;
 		}
 		p#pri2{
 		width: 100%;
-		height:20%;
+		font-size:18pt;
 		}
 		p#pri3{
 		width: 100%;
-		height:20%;
+		font-size:18pt;
 		}
 		p#pri4{
 		width: 100%;
-		height:20%;
+		font-size:18pt;
 		}
 		p#pri5{
 		width: 100%;
-		height:20%;
+		font-size:18pt;
 		}
 		p#pri6{
 		width: 100%;
-		height:20%;
+		font-size:18pt;
 		}
 		
 		input#cVolp{
@@ -143,7 +143,7 @@
 		font-size: 20px;
 		}
 		input#cConcp{
-		width: 50%;
+		width: 60%;
 		height:40px;
 		font-size: 20px;
 		}
@@ -153,7 +153,7 @@
 		font-size: 20px;
 		}
 		input#cConcd{
-		width: 50%;
+		width: 60%;
 		height:40px;
 		font-size: 20px;
 		}
@@ -163,7 +163,7 @@
 		font-size: 20px;
 		}
 		input#cConca{
-		width: 50%;
+		width: 60%;
 		height:40px;
 		font-size: 20px;
 		}
@@ -180,7 +180,7 @@ window.alert("Ao fechar este aviso você atesta para os devidos fins que leu e c
 </script>
 	<hgroup>
 	<h1>TRANSFORM SOLUÇÕES</h1> 
-	<h2>Calculadora/Algoritmo para modificação da concentração de medicamentos</h2>
+	<h2>Calculadora para modificação da concentração de medicamentos</h2>
 	</hgroup>
 	<img src="logocalculo.png.png"
 	alt="Logotipo"
@@ -190,18 +190,18 @@ window.alert("Ao fechar este aviso você atesta para os devidos fins que leu e c
 	>
 	
 		<form method="get" id="fCalculo" action="none" oninput="resultado()" >
-			<fieldset style="width: 20%;"><legend><strong>SOLUÇÃO PRESCRITA</strong></legend>
+			<fieldset ><legend><strong>SOLUÇÃO PRESCRITA</strong></legend>
 			<p id="pri"><label for="cVolp">Volume(mL): </label><input type="number" name="tVolp" id="cVolp" min="0" max="500000" placeholder="Ex: 500" oninput="clicar()"></p>
 			<p id="pri2"><label for="cConcp">Concentração(%): </label><input type="number" name="tConcp" id="cConcp" min="0" max="500000"placeholder="Ex: 0.9" ></p>
 			
 			
 			</fieldset>
-			<fieldset style="width: 20%;"><legend><strong>SOLUÇÃO DISPONÍVEL</strong></legend>
+			<fieldset ><legend><strong>SOLUÇÃO DISPONÍVEL</strong></legend>
 			<p id="pri3"><label for="cVold">Volume(mL): </label><input type="number" name="tVold" id="cVold" min="0" max="500000" readonly ></p>
 			<p id="pri4"><label for="cConcd">Concentração(%): </label><input type="number" name="tConcd" id="cConcd" min="0" max="500000"placeholder="Ex: 5"></p>
 			</fieldset>
 			
-			<fieldset style="width: 20%;"><legend><strong>AMPOLA</strong></legend>
+			<fieldset ><legend><strong>AMPOLA</strong></legend>
 			<p id="pri5"><label for="cVola">Volume(mL): </label><input type="number" name="tVola" id="cVola" min="0" max="500000" placeholder="Ex: 20"></p>
 			<p id="pri6"><label for="cConca">Concentração(%): </label><input type="number" name="tConca" id="cConca" min="0" max="500000"placeholder="Ex: 0" oninput="resultado()"></p>
 			</fieldset>

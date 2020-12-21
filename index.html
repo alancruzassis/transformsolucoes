@@ -12,25 +12,27 @@
 
   gtag('config', 'UA-183808235-1');
 </script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital@1&family=Langar&display=swap" rel="stylesheet">
 
 	<title>Transform Soluções</title>
 	<style>
 		h1 {
-			font-family: Arial;
-			font-size: 45pt;
+			font-family: 'Langar', Arial;
+			font-size: 55pt;
 			color: #27314d;
 			position:absolute;
 			left:135px;
-			top:-20px;
+			top:-55px;
 			
 		}
 		h2 {
-			font-family: Helvetica;
-			font-size: 17pt;
+			font-family: 'Andika New Basic', Helvetica;
+			font-size: 19pt;
 			color: #32620e;
 			position:absolute;
 			left:137px;
-			top: 74px;
+			top: 65px;
 			
 			}
 		p {
@@ -51,15 +53,16 @@
 			border: 2px solid blue;
 			padding-bottom: 0px;
 			margin-top: 10px;
+			border-radius: 10px;
 		}
 		img{
 			position: absolute;
-			top:10px
+			top:10px;
+			left: 14px;
 		}
 		
 		body{
 		background-color: #f9fcff
-		
 		}
 			
 		p#conjuntocaixa{
@@ -107,15 +110,14 @@
 		
 		}
 		p#copyright{
-		font: normal 15pt Arial;
+		font: normal 16pt Arial;
 		color:white;
 		text-align:center;
 		}
 		
 		form#fCalculo{
 		width: 100%;
-		
-		
+			
 		}
 		
 		p#pri{
@@ -204,7 +206,11 @@
 			min-height:100%;
 			position:relative;
 			width:100%;
+			margin-left: 0px;
+			margin-right: 0px;
 		}
+
+		
 
 		a{
 		text-decoration: none;
@@ -227,11 +233,12 @@
 		footer{
 			position:absolute;
 			bottom:0;
-			width:100%;
+			width:102%;
+			left: -1%;
 			background-color: #32620e;
 			opacity:0.85;
-			padding-top: 10px;
-			padding-bottom: 10px;
+			padding-top: 8px;
+			padding-bottom: 8px;
 			
 		}
 		
@@ -254,8 +261,7 @@ window.alert("Ao fechar este aviso você atesta que leu e concorda com os TERMOS
 	<img src="logocalculo.png.png"
 	alt="Logotipo"
 	width="120px"
-	text-align:right
-	padding:30pt
+	
 	>
 	
 		<form method="get" id="fCalculo" action="none" oninput="resultado()" >
@@ -283,9 +289,10 @@ window.alert("Ao fechar este aviso você atesta que leu e concorda com os TERMOS
 			
 			
 		</form>
-	
+	<div id="div">
 	<p id="conjuntocaixa" class="absolute"><label for="caixai" id="labelin">INSTRUÇÕES</label><input type="text" name="caixan" id="caixai" value="Preencha os campos ao lado" readonly /></p>
 	<textarea id="textarea"  readonly >Preencha os campos ao lado</textarea>
+	</div>
 	
 	<script>
 		function clicar() {

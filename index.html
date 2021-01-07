@@ -42,8 +42,8 @@
 			top: 3px;
 			padding: 0px;
 			margin-top: 0px;
-			
-		}
+			text-shadow: 0.5px 0.5px 0.2px black;
+			}
 		h2 {
 			font-family: 'Andika New Basic', Helvetica;
 			font-size: 19pt;
@@ -51,8 +51,9 @@
 			position: absolute;
 			left:131px;
 			top: 82px;
-			
+			text-shadow: 0.5px 0.5px 0.2px black;
 			}
+		
 		p {
 			font-family: Arial;
 			font-size: 15pt;
@@ -309,6 +310,7 @@
 		color: #27314d;
 		border-radius: 5px;
 		line-height: 2em;
+		text-shadow: 0.5px 0.5px 0.5px black;
 		}
 		
 		input#caixai{
@@ -368,23 +370,35 @@
 		}
 		
 		footer{
-			position:relative;
+			position: relative;
 			font-family: Arial;
+			font-size: 1em;
+			font-weight: bold;
+			color: white;
+			text-shadow: 0.5px 0.5px 0px black;
 			bottom:0;
-			width:100%;
+			width:103%;
 			left: 0px;
+			right: 0px;
+			min-width: 100%;
 			background-color: #32620e;
 			opacity:0.85;
 			padding-top: 8px;
 			padding-bottom: 8px;
 			text-align: center;
-			font-size: 1em;
 			margin: 0;
 			border: 0;
-			font-weight: bold;
-			color: white;
-			text-shadow: 0.5px 0.5px 0px black;
+			}
+		
+		.footer{
+		padding:0px;
+		margin: 0px;
+		display: flex;
+		align-items: center;
+		left: 0px;
+		bottom: 0px;
 		}
+			
 		
 		#lastupdated{
 		font-family: Consolas, arial;
@@ -534,7 +548,7 @@ window.alert("Ao fechar este aviso você atesta que leu e concorda com os TERMOS
 </br>
 
 
-<div>
+<div class="footer">
 <footer>
 	
 	© Copyright 2020 - 2021 UNEB - Todos os direitos reservados.

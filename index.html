@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<meta charset="UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183808235-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-183808235-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-183808235-1');
-</script>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital@1&family=Langar&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    gtag('config', 'UA-183808235-1');
+    </script>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Calculadora para facilitar a modificação da concentração de soluções de medicamentos. Desenvolvido na UNEB.">
 
-<link rel="shortcut icon" href="icon.ico" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 
-	<title>Transform Soluções</title>
+    <link rel="shortcut icon" href="icon.ico" >
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+	<title>Transform Soluções | Web APP</title>
 	<style>
-		* {
+	* {
     margin: 0;
     padding: 0;
 	}
 	html{height:10%;}
-		body{height:100%;
-		min-height: 100%;}
+	body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        
+    }
 		
-		.general{
-		position:relative;
-		height: 100%;
-		width: 100%;
-		min-height:100%;
-		padding: 0px;
-		margin: 0px;
-		}
+		.site-content{
+            flex-grow: 1;
+        }
 		
+        main{
+            position: relative;
+            display: block;
+        }
+
 		h1 {
 			font-family: 'Roboto', Arial;
 			font-size: 46pt;
@@ -76,10 +81,13 @@
 			top: 145px;
 			border: 2px solid #0066B3;
 			padding-bottom: 0px;
-			margin-top: 10px;
 			border-radius: 10px;
 			background-color: white;
 		}
+
+        fieldset #solprescrita{
+            margin-top: 0;
+        }
 		img{
 			position: absolute;
 			top:15px;
@@ -93,54 +101,44 @@
 		background-color: #f9fcff
 		}
 			
-				
-		
-		
-			
-		
 		p#copyright{
 		font: normal 16pt Arial;
 		color:white;
 		text-align:center;
 		}
 		
-		
-		
+        p #pri1, #pri, #pri2, #pri3, #pri4, #pri5, #pri6{
+            font-weight:bold;
+        }
 		p#pri{
 		width: 100%;
 		font-size:22pt;
 		color: #3d3a3a;
-		text-shadow: 0.5px 0.5px 0.5px black;
 		}
 		p#pri2{
 		width: 100%;
 		font-size:22pt;
 		color: #3d3a3a;
-		text-shadow: 0.5px 0.5px 0.5px black;
 		}
 		p#pri3{
 		width: 100%;
 		font-size:22pt;
 		color: #3d3a3a;
-		text-shadow: 0.5px 0.5px 0.5px black;
 		}
 		p#pri4{
 		width: 100%;
 		font-size:22pt;
 		color: #3d3a3a;
-		text-shadow: 0.5px 0.5px 0.5px black;
 		}
 		p#pri5{
 		width: 100%;
 		font-size:22pt;
 		color: #3d3a3a;
-		text-shadow: 0.5px 0.5px 0.5px black;
 		}
 		p#pri6{
 		width: 100%;
 		font-size:22pt;
 		color: #3d3a3a;
-		text-shadow: 0.5px 0.5px 0.5px black;
 		}
 		
 		input#cVolp{
@@ -205,11 +203,6 @@
 		}
 		
 		
-		
-		
-
-		
-
 		a{
 		text-decoration: none;
 		font-size: 16px;
@@ -228,31 +221,33 @@
 		cursor: pointer;
 		}
 		
-		
+        a #instagrama{
+            padding: 5px;
+        }
 		
 		input#cVolp:not(:placeholder-shown) {
-      border-color: green;
-	  }
+            border: 2px solid green;
+	    }
 
-	input#cConcp:not(:placeholder-shown) {
-      border-color: green;
-    }
+	    input#cConcp:not(:placeholder-shown) {
+            border: 2px solid green;
+        }
 	
 		
-	input#cConcd:not(:placeholder-shown) {
-      border-color: green;
-    }
+	    input#cConcd:not(:placeholder-shown) {
+            border: 2px solid green;
+        }
 	
-	input#cVola:not(:placeholder-shown) {
-      border-color: green;
-    }
+	    input#cVola:not(:placeholder-shown) {
+            border: 2px solid green;
+        }
 	
-	input#cConca:not(:placeholder-shown) {
-      border-color: green;
-    }
-	input:placeholder-shown {
-      border-color: red;
-    }
+        input#cConca:not(:placeholder-shown) {
+            border: green solid 2px;
+        }
+        input:placeholder-shown {
+        border: 2px solid #0066B3;
+        }
 	
 	.cabecalho{
 	top: 0px;
@@ -262,24 +257,24 @@
 	margin-top: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
+    margin-bottom: 30px;
 	position: relative;
 	height: 150px;
 	display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		margin-top: 0px;
-		margin-bottom: 5px;
 		box-shadow: 0px 3px 2px #888888;
 	}
 	
 	.flex-box {
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		 background-color: yellow;
-		 width: 100%;
-		 height: 99%;
-		 }
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: none;
+		width: 100%;
+		height: 100%;
+        border-radius: 10px;
+		}
 	
 		
 	.form{
@@ -291,8 +286,7 @@
 	height: 100%;
 	float: left;
 	padding: 0px;
-	
-	top: 10px;
+	top: 0px;
 	margin-top: 0px;
 	}
 	
@@ -312,15 +306,20 @@
 	
 	textarea#textarea{
 		
-		text-align:center;
+		text-align:left;
 		line-height:150px;
 		width: 90%;
-		height: 90%;
+		height: 91%;
 		font: normal 30pt Arial;
 		color: #27314d;
 		border-radius: 5px;
+        border: 25px solid yellow;
+        padding-left: 10px;
+		padding-right: 3px;
+		padding-top: 5px;
 		line-height: 2em;
 		text-shadow: 0.5px 0.5px 0.5px black;
+        word-break: break-all;
 		}
 		
 		input#caixai{
@@ -343,7 +342,7 @@
 		height: 750px;
 		padding: 5px;
 		box-sizing: border-box;
-		margin: 0px:
+		margin: 0px;
 		border-radius: 25px;
 		top:0px;
 		text-shadow: 0.5px 0.5px 0.5px black;
@@ -378,39 +377,37 @@
 		min-width: 250px;
 		left: 0px;
 		}
+
+        img#instagram{
+			position: relative;
+            left: 0;
+            top: 10px;
+			height: 35px;
+			bottom: 0px;
+			padding: 0px;
+		}
 		
 		footer{
-			position: relative;
 			font-family: Arial;
 			font-size: 15pt;
 			font-weight: bold;
 			color: white;
 			text-shadow: 0.5px 0.5px 0px gray;
-			bottom:0;
 			width:100%;
 			left: 0px;
 			right: 0px;
 			min-width: 100%;
 			background-color: #0066B3;
-			
+			height: 30px;
 			padding-top: 15px;
 			padding-bottom: 15px;
 			text-align: center;
 			margin: 0;
 			border: 0;
-			top: calc(100%);
-			}
-		
-		.footer{
-		position: relative;
-		padding:0px;
-		margin: 0px;
-		display: flex;
-		align-items: center;
-		left: 0px;
-		bottom: 0px;
-		float: bottom;
-		}
+            }
+            .page-wrap:after {
+                height: 30px; 
+            }
 			
 		
 		#lastupdated{
@@ -444,8 +441,16 @@
 <script>
 window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos fins que leu e concorda com os TERMOS E CONDIÇÕES DE USO (disponíveis no nosso site), que atende aos pré-requisitos neles dispostos e que cumprirá os termos neles acordados e que aceita os cookies deste site. Caso você não concorde (ou não puder cumprir) com os acordos você deve sair da página e não poderá ter acesso ao conteúdo.")
 </script>
-<div class="general">
-<div class="cabecalho">
+<script type="text/javascript">
+
+    function PressEnter(nextinputId){
+        if(event.keyCode == 13){
+            document.getElementById(nextinputId).focus();     
+            return false;           
+        }
+    }
+</script>
+<header class="cabecalho">
 	<hgroup>
 	<h1>TRANSFORM SOLUÇÕES</h1> 
 	<h2>Software de modificação da concentração de medicamentos</h2>
@@ -454,41 +459,42 @@ window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos
 	alt="Logotipo"
 	width="120px"
 	>
-</div>	
+</header>	
 
+<div class="site-content">
+<main>
 <div class="flex-box container-box" id="flexform">
 <div class="form">
 
 		<form method="get" id="fCalculo" action="none" oninput="resultado()" >
 			
-			<fieldset ><legend style="color: #27314d"><strong>SOL. PRESCRITA</strong></legend>
-			<p id="pri"><label for="cVolp">Volume(mL): </label><input type="number" name="tVolp" id="cVolp" min="0" max="500000" placeholder="Ex: 500" oninput="clicar()"></p>
-			<p id="pri2"><label for="cConcp">Concentração(%): </label><input type="number" name="tConcp" id="cConcp" min="0" max="500000"placeholder="Ex: 0.9" ></p>
+			<fieldset id="solprescrita"><legend style="color: #27314d"><strong>SOL. PRESCRITA</strong></legend>
+			<p id="pri"><label for="cVolp">Volume(mL) </label><input type="number" name="tVolp" id="cVolp" min="0" max="500000" placeholder="Ex: 500" oninput="clicar()" onkeyup="PressEnter('cConcp');"></p>
+			<p id="pri2"><label for="cConcp">Concentração(%) </label><input type="number" name="tConcp" id="cConcp" min="0" max="500000"placeholder="Ex: 0.9" onkeyup="PressEnter('cConcd');"></p>
 			
-			
-			
+						
 			</fieldset>
 			<fieldset ><legend style="color: #27314d"><strong>SOL. DISPONÍVEL</strong></legend>
-			<p id="pri3"><label for="cVold">Volume(mL): </label><input type="number" name="tVold" id="cVold" min="0" max="500000" readonly ></p>
-			<p id="pri4"><label for="cConcd">Concentração(%): </label><input type="number" name="tConcd" id="cConcd" min="0" max="500000"placeholder="Ex: 5"></p>
+			<p id="pri3"><label for="cVold">Volume(mL) </label><input type="number" name="tVold" id="cVold" min="0" max="500000" readonly ></p>
+			<p id="pri4"><label for="cConcd">Concentração(%) </label><input type="number" name="tConcd" id="cConcd" min="0" max="500000"placeholder="Ex: 5" onkeyup="PressEnter('cVola');"></p>
 			</fieldset>
 			
 			
 			
 			<fieldset ><legend style="color: #27314d"><strong>AMPOLA</strong></legend>
-			<p id="pri5"><label for="cVola">Volume(mL): </label><input type="number" name="tVola" id="cVola" min="0" max="500000" placeholder="Ex: 20"></p>
-			<p id="pri6"><label for="cConca">Concentração(%): </label><input type="number" name="tConca" id="cConca" min="0" max="500000"placeholder="Ex: 0" oninput="resultado()"></p>
+			<p id="pri5"><label for="cVola">Volume(mL) </label><input type="number" name="tVola" id="cVola" min="0" max="500000" placeholder="Ex: 20" onkeyup="PressEnter('cConca');"></p>
+			<p id="pri6"><label for="cConca">Concentração(%) </label><input type="number" name="tConca" id="cConca" min="0" max="500000"placeholder="Ex: 0" oninput="resultado()"></p>
 			</fieldset>
 			<br>
 				
 		</form>
 		
 </div>		
-		<input type="text" name="caixan" id="caixai" value="<<REENCHA OS CAMPOS AO LADO" readonly />
-		
+				
 	<div id="div">
 	<div class="flex-box">
-	<textarea id="textarea"  readonly ><<PREENCHA OS CAMPOS AO LADO</textarea>
+        <input type="text" name="caixan" id="caixai" value="<<REENCHA OS CAMPOS AO LADO" readonly />
+        <textarea id="textarea"  readonly >← PREENCHA OS CAMPOS AO LADO</textarea>
 	</div>
 	</div>
 </div>	
@@ -536,15 +542,15 @@ window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos
 		var txtarea = window.document.getElementById('textarea')
 		
 	if(con2 > con1){
-		r.value=`Despreze ${desprezar}mL da solução e adcione ${adicionar}mL de água destilada.`
-		txtarea.value= `Despreze ${desprezar}mL da solução e adcione ${adicionar}mL de água destilada.`
+		r.value=`Despreze ${desprezar} mL da solução e adcione ${adicionar} mL de água destilada.`
+		txtarea.value= `Despreze ${desprezar} mL da solução e adcione ${adicionar} mL de água destilada.`
 	}else if(vaserad>50){	
-		r.value= `Despreze ${vold}mL, adcione ${ampcd} ampola(s) inteiras e aspire ${aspiracaocd}mL da ${esimaampcd}ª ampola.` //mostra na instrução
-		txtarea.value= `Despreze ${vold}mL, adcione ${ampcd} ampola(s) inteiras e aspire ${aspiracaocd}mL da ${esimaampcd}ª ampola.`
+		r.value= `Despreze ${vold} mL, adcione ${ampcd} ampola(s) inteira(s) e aspire ${aspiracaocd} mL da ${esimaampcd}ª ampola.` //mostra na instrução
+		txtarea.value= `Despreze ${vold} mL, adcione ${ampcd} ampola(s) inteira(s) e aspire ${aspiracaocd} mL da ${esimaampcd}ª ampola.`
 		}
 	else{
-		r.value= `Adcione ${ampsd} ampola(s) inteira(s) e aspire ${aspiracaosd}mL da ${esimaampsd}ª ampola.`
-		txtarea.value= `Adcione ${ampsd} ampola(s) inteira(s) e aspire ${aspiracaosd}mL da ${esimaampsd}ª ampola.`
+		r.value= `Adcione ${ampsd} ampola(s) inteira(s) e aspire ${aspiracaosd} mL da ${esimaampsd}ª ampola.`
+		txtarea.value= `Adcione ${ampsd} ampola(s) inteira(s) e aspire ${aspiracaosd} mL da ${esimaampsd}ª ampola.`
 		}
 		
 		}
@@ -557,13 +563,16 @@ window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos
 </br>
 </br>
 </br>
-<p id="links"><span ><a href="https://alamgenio.wixsite.com/transformsolucoes" target="_blank">WEB SITE</a></span><span ><a href="https://instagram.com/transform.solucoes" target="_blank">Instagram</a></span></p>
+<p id="links"><span ><a href="https://alamgenio.wixsite.com/transformsolucoes" target="_blank">Nosso site</a></span><span ><a id="instagrama" href="https://www.instagram.com/transformsolucoes/" target="_blank"><img id="instagram" src="instagram.jpg" alt="instagam logo"/></a></span></p>
+
 </br>	
 </br>	
 </br>
-<p id="lastupdated">&nbsp;Última atualização em: 03/08/2021</p>
+<p id="lastupdated">&nbsp;Última atualização em: 12/10/2022</p>
 </br>
 
+</main>
+</div>
 
 
 <footer>

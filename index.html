@@ -43,11 +43,17 @@
             display: block;
         }
 
+		.divHeader{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			padding-left: 4%;
+			box-sizing: border-box;
+		}
 		h1 {
 			font-family: 'Roboto', Arial;
 			font-size: 46pt;
 			color: #27314d;
-			position: absolute;
 			left: 134px;
 			top: 14px;
 			padding: 0px;
@@ -58,7 +64,6 @@
 			font-family: Helvetica;
 			font-size: 17pt;
 			color: #0066B3;
-			position: absolute;
 			left:138px;
 			top: 90px;
 			
@@ -81,7 +86,7 @@
 			top: 145px;
 			border: 2px solid #0066B3;
 			padding-bottom: 0px;
-			border-radius: 10px;
+			border-radius: 15px;
 			background-color: white;
 		}
 
@@ -89,7 +94,6 @@
             margin-top: 0;
         }
 		img{
-			position: absolute;
 			top:15px;
 			left: 10px;
 			margin: 0px;
@@ -141,8 +145,12 @@
 		color: #3d3a3a;
 		}
 		
+		textarea:focus, input:focus{
+      		outline: none;
+    	}
+
 		input#cVolp{
-		width: 70%;
+		width: 75%;
 		height:50px;
 		font-size: 30px;
 		padding-left: 10px;
@@ -151,7 +159,7 @@
 		margin-top: 10px;
 		}
 		input#cConcp{
-		width: 70%;
+		width: 75%;
 		height:50px;
 		font-size: 30px;
 		padding-left: 10px;
@@ -160,17 +168,17 @@
 		margin-top: 10px;
 		}
 		input#cVold{
-		width: 70%;
+		width: 75%;
 		height:50px;
 		font-size: 30px;
-		background-color: #d9d9d9;
+		background-color: #e8e8e8;
 		padding-left: 10px;
 		border-radius: 5px;
 		margin-bottom: 15px;
 		margin-top: 10px;
 		}
 		input#cConcd{
-		width: 70%;
+		width: 75%;
 		height:50px;
 		font-size: 30px;
 		padding-left: 10px;
@@ -179,7 +187,7 @@
 		margin-top: 10px;
 		}
 		input#cVola{
-		width: 70%;
+		width: 75%;
 		height:50px;
 		font-size: 30px;
 		padding-left: 10px;
@@ -188,7 +196,7 @@
 		margin-top: 10px;
 		}
 		input#cConca{
-		width: 70%;
+		width: 75%;
 		height:50px;
 		font-size: 30px;
 		padding-left: 10px;
@@ -203,9 +211,10 @@
 		}
 		
 		
-		a{
+		.classicLink{
 		text-decoration: none;
 		font-size: 16px;
+		font-weight: bold;
 		color:  #2c5fac;
 		background-color: white;
 		padding: 19px 27px;
@@ -220,7 +229,17 @@
 		margin-right: 15px;
 		cursor: pointer;
 		}
+
+		.simpleLink{
+			color: gray;
+		}
 		
+		.lattes{
+			text-decoration: underline;
+			cursor: pointer;
+			color: black;
+		}
+
         a #instagrama{
             padding: 5px;
         }
@@ -250,20 +269,20 @@
         }
 	
 	.cabecalho{
-	top: 0px;
-	width: 100%;
-	left: 0px;
-	background-color: #ffffff;
-	margin-top: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
-    margin-bottom: 30px;
-	position: relative;
-	height: 150px;
-	display: flex;
+		top: 0px;
+		width: 100%;
+		height: 140px;
+		left: 0px;
+		background-color: #ffffff;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-bottom: 25px;
+		position: relative;
+		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		box-shadow: 0px 3px 2px #888888;
+		box-shadow: 0px 2px 3px #888888;
 	}
 	
 	.flex-box {
@@ -410,25 +429,43 @@
             }
 			
 		
-		#lastupdated{
+		.lastupdated{
 		font-family: Consolas, arial;
-		width: 80%;
+		width: auto;
 		color: gray;
 		font-size: 0.8em;
 		}
 		
 		#obs{
-		margin-left: 10px;
+		margin-left: 4%;
 		}
 		
 		#links{
-		margin-left: 10px;
+		margin-left: 4%;
 		width: 80%;
 		}
 		
-		legend{
-		text-shadow: 0.5px 0.5px 0.5px black;
+		.siteInfo{
+			display: flex;
+			flex-direction: row;
+			padding-left: 4%;
+			margin-bottom: 15px;
 		}
+
+		.autoria{
+			font-family: Arial, Helvetica, sans-serif;
+			margin-left: 4%;
+			font-size: 15pt;
+			margin-bottom: 40px;
+			margin-top: 25px;
+			width: auto;
+		}
+
+		.autoria p{
+			display: block;
+			width: 80%;
+		}
+		
 		
 		
 	</style>
@@ -438,9 +475,6 @@
 </head>
 <body>
 
-<script>
-window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos fins que leu e concorda com os TERMOS E CONDIÇÕES DE USO (disponíveis no nosso site), que atende aos pré-requisitos neles dispostos e que cumprirá os termos neles acordados e que aceita os cookies deste site. Caso você não concorde (ou não puder cumprir) com os acordos você deve sair da página e não poderá ter acesso ao conteúdo.")
-</script>
 <script type="text/javascript">
 
     function PressEnter(nextinputId){
@@ -451,14 +485,13 @@ window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos
     }
 </script>
 <header class="cabecalho">
-	<hgroup>
-	<h1>TRANSFORM SOLUÇÕES</h1> 
-	<h2>Software de modificação da concentração de medicamentos</h2>
-	</hgroup>
-	<img src="logots.png"
-	alt="Logotipo"
-	width="120px"
-	>
+	<div class="divHeader">
+		<img src="logots.png" alt="Logotipo" width="120px">
+		<hgroup>
+			<h1>TRANSFORM SOLUÇÕES</h1> 
+			<h2>Software de modificação da concentração de medicamentos</h2>
+		</hgroup>
+	</div>
 </header>	
 
 <div class="site-content">
@@ -469,21 +502,21 @@ window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos
 		<form method="get" id="fCalculo" action="none" oninput="resultado()" >
 			
 			<fieldset id="solprescrita"><legend style="color: #27314d"><strong>SOL. PRESCRITA</strong></legend>
-			<p id="pri"><label for="cVolp">Volume(mL) </label><input type="number" name="tVolp" id="cVolp" min="0" max="500000" placeholder="Ex: 500" oninput="clicar()" onkeyup="PressEnter('cConcp');"></p>
-			<p id="pri2"><label for="cConcp">Concentração(%) </label><input type="number" name="tConcp" id="cConcp" min="0" max="500000"placeholder="Ex: 0.9" onkeyup="PressEnter('cConcd');"></p>
+			<p id="pri"><label for="cVolp">Volume (mL) </label><input type="number" name="tVolp" id="cVolp" min="0" max="500000" placeholder="Ex: 500" oninput="clicar()" onkeyup="PressEnter('cConcp');"></p>
+			<p id="pri2"><label for="cConcp">Concentração (%) </label><input type="number" name="tConcp" id="cConcp" min="0" max="500000"placeholder="Ex: 0.45" onkeyup="PressEnter('cConcd');"></p>
 			
 						
 			</fieldset>
 			<fieldset ><legend style="color: #27314d"><strong>SOL. DISPONÍVEL</strong></legend>
-			<p id="pri3"><label for="cVold">Volume(mL) </label><input type="number" name="tVold" id="cVold" min="0" max="500000" readonly ></p>
-			<p id="pri4"><label for="cConcd">Concentração(%) </label><input type="number" name="tConcd" id="cConcd" min="0" max="500000"placeholder="Ex: 5" onkeyup="PressEnter('cVola');"></p>
+			<p id="pri3"><label for="cVold">Volume (mL) </label><input type="number" name="tVold" id="cVold" min="0" max="500000" readonly ></p>
+			<p id="pri4"><label for="cConcd">Concentração (%) </label><input type="number" name="tConcd" id="cConcd" min="0" max="500000"placeholder="Ex: 0.9" onkeyup="PressEnter('cVola');"></p>
 			</fieldset>
 			
 			
 			
 			<fieldset ><legend style="color: #27314d"><strong>AMPOLA</strong></legend>
-			<p id="pri5"><label for="cVola">Volume(mL) </label><input type="number" name="tVola" id="cVola" min="0" max="500000" placeholder="Ex: 20" onkeyup="PressEnter('cConca');"></p>
-			<p id="pri6"><label for="cConca">Concentração(%) </label><input type="number" name="tConca" id="cConca" min="0" max="500000"placeholder="Ex: 0" oninput="resultado()"></p>
+			<p id="pri5"><label for="cVola">Volume (mL) </label><input type="number" name="tVola" id="cVola" min="0" max="500000" placeholder="Ex: 20" onkeyup="PressEnter('cConca');"></p>
+			<p id="pri6"><label for="cConca">Concentração (%) </label><input type="number" name="tConca" id="cConca" min="0" max="500000"placeholder="Ex: 0" oninput="resultado()"></p>
 			</fieldset>
 			<br>
 				
@@ -545,12 +578,12 @@ window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos
 		r.value=`Despreze ${desprezar} mL da solução e adcione ${adicionar} mL de água destilada.`
 		txtarea.value= `Despreze ${desprezar} mL da solução e adcione ${adicionar} mL de água destilada.`
 	}else if(vaserad>50){	
-		r.value= `Despreze ${vold} mL, adcione ${ampcd} ampola(s) inteira(s) e aspire ${aspiracaocd} mL da ${esimaampcd}ª ampola.` //mostra na instrução
+		r.value= `Despreze ${vold} mL, adcione ${ampcd} ampola(s) inteira(s) \ne aspire ${aspiracaocd} mL da ${esimaampcd}ª ampola.` //mostra na instrução
 		txtarea.value= `Despreze ${vold} mL, adcione ${ampcd} ampola(s) inteira(s) e aspire ${aspiracaocd} mL da ${esimaampcd}ª ampola.`
 		}
 	else{
-		r.value= `Adcione ${ampsd} ampola(s) inteira(s) e aspire ${aspiracaosd} mL da ${esimaampsd}ª ampola.`
-		txtarea.value= `Adcione ${ampsd} ampola(s) inteira(s) e aspire ${aspiracaosd} mL da ${esimaampsd}ª ampola.`
+		r.value= `Adcione ${ampsd} ampola(s) inteira(s) \ne aspire ${aspiracaosd} mL da ${esimaampsd}ª ampola.`
+		txtarea.value= `Adcione ${ampsd} ampola(s) inteira(s) \ne aspire ${aspiracaosd} mL da ${esimaampsd}ª ampola.`
 		}
 		
 		}
@@ -562,18 +595,25 @@ window.alert("BEM-VINDO(A)!\n\nAo fechar este aviso você atesta para os devidos
 <p id="obs"><i>Obs.: Considere '.' (ponto) como ',' (vírgula) e vice-versa.</i></p>
 </br>
 </br>
+<section class="autoria">
+	<p>Criadores: <a class="lattes" href="http://lattes.cnpq.br/4993291222018594" target="_blank">Alan da Cruz Assis da Silva</a> e <a class="lattes" href="http://lattes.cnpq.br/3099747635787702" target="_blank">Suiane Costa Ferreira</a></p>
+</section>
 </br>
-<p id="links"><span ><a href="https://alamgenio.wixsite.com/transformsolucoes" target="_blank">Nosso site</a></span><span ><a id="instagrama" href="https://www.instagram.com/transformsolucoes/" target="_blank"><img id="instagram" src="instagram.jpg" alt="instagam logo"/></a></span></p>
+<p id="links"><span ><a class="classicLink" href="https://alamgenio.wixsite.com/transformsolucoes" target="_blank">Nosso site</a></span><span ><a class="classicLink" id="instagrama" href="https://www.instagram.com/transformsolucoes/" target="_blank"><img id="instagram" src="instagram.jpg" alt="instagam logo"/></a></span></p>
 
 </br>	
-</br>	
 </br>
-<p id="lastupdated">&nbsp;Última atualização em: 12/10/2022</p>
+</br>
+
+
 </br>
 
 </main>
 </div>
-
+<div class="siteInfo">
+	<p class="lastupdated">&nbsp;Última atualização em: 12/10/2022</p>
+	<p class="lastupdated" style="margin-left: 80px;"><a class="simpleLink" href="https://alancruzassis.github.io/transformsolucoes/termos.pdf">Termos</a></p>
+</div>
 
 <footer>
 	
